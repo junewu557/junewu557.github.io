@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+  body {
+    background: url(2.jpg) no-repeat center fixed;
+    background-size:cover;}
+  </style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
+  <title>Film Festivals</title>
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+           <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+           <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+           <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <br /><br />
+          <div class="container">
+            <style>
+                p {
+                font-family: Cursive;
+                color: #D9B300;
+                font-size: 35px;
+                text-shadow:color: grey; text-shadow: #6C6C6C 0.05em 0.05em 0.1em;
+                font-weight: bolder;
+                text-align: center;
+                letter-spacing: 4px;
+                padding-top:50px;
+                }
+
+                p {
+              width: 100%;
+              height: 110px;
+              background-color: black;
+            }
+
+              text {
+                font-family: Cursive;
+                color: deepgrey;
+                font-size: 20px;
+                font-weight: lighter;
+                letter-spacing: 2px;
+                padding-top:65px;
+                padding-left: 460px;
+              }
+            </style>
+
+            <!-- CSS goes in the document HEAD or added to your external stylesheet -->
+            <style type="text/css">
+            table.hovertable {
+            	font-family: verdana,arial,sans-serif;
+            	font-size:11px;
+            	color:#333333;
+            	border-width: 1px;
+            	border-color: #999999;
+            	border-collapse: collapse;
+            }
+            table.hovertable th {
+            	background-color:#c3dde0;
+            	border-width: 1px;
+            	padding: 8px;
+            	border-style: solid;
+            	border-color: #a9c6c9;
+            }
+            table.hovertable tr {
+            	background-color:#d4e3e5;
+            }
+            table.hovertable td {
+            	border-width: 1px;
+            	padding: 8px;
+            	border-style: solid;
+            	border-color: #a9c6c9;
+            }
+            </style>
+
+            <!-- Table goes in the document BODY -->
+            <table class="hovertable">
+            <tr>
+            	<th>Info Header 1</th><th>Info Header 2</th><th>Info Header 3</th>
+            </tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            	<td>Item 1A</td><td>Item 1B</td><td>Item 1C</td>
+            </tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            	<td>Item 2A</td><td>Item 2B</td><td>Item 2C</td>
+            </tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            	<td>Item 3A</td><td>Item 3B</td><td>Item 3C</td>
+            </tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            	<td>Item 4A</td><td>Item 4B</td><td>Item 4C</td>
+            </tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
+            	<td>Item 5A</td><td>Item 5B</td><td>Item 5C</td>
+            </tr>
+            </table>
+
+
+               <p>Film Festivals datatable</p><br />
+               <text> Accuracy from 2007-2017</text><br />
+               <table id="data-table" class="table table-striped table-dark">
+                    <thead>
+                         <tr>
+                           <th>Name</th>
+                              <th>year</th>
+                              <th>best_picture</th>
+                              <th>best_actor</th>
+                              <th>best_actress</th>
+                              <th>best_foreign_language_film</th>
+                            </tr>
+                          </thead>
+                        </table>
+                <div id="chart"></div>
+           </div>
+ </body>
+</html>
+
+<script>
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/film_festivals?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_picture);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       items.push(value.fields.best_foreign_language_film);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_picture",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                     { title: "best_foreign_language_film",
+                             defaultContent:""},
+
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+</script>
