@@ -168,7 +168,7 @@ body > * {
 }
 
 .bg-dark-opaque {
-  background: rgba(map-get($theme-colors, 'primary'), 0.60);  
+  background: rgba(map-get($theme-colors, 'dark'), 0.60);  
   .btn {
   border-color: rgba(map-get($theme-colors, 'light'), 1);
   color: white;
