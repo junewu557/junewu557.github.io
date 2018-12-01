@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+
+<body>
+	<div id="container" style="width: 100%;">
+	<canvas id="myChart"></canvas>
+
+	<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+	    // The type of chart we want to create
+	    type: 'bar',
+
+	    // The data for our dataset
+	    data: {
+	        labels: ["Youngest Best Actor", "Best Actor(average)", "youngest Best Actress", "Best Actress(average)"],
+	        datasets: [{
+	            label: "Average Age of Best Actor & Actress",
+							backgroundColor: 'rgb(169,169,169)',
+							hoverBackgroundColor: 'rgb(218,165,32)',
+	            data: [30, 44.5, 21, 37],
+	        }]
+	    },
+
+	    // Configuration options go here
+	    options: {}
+	});
+	</script>
+</body>
+
+</html>

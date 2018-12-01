@@ -137,8 +137,8 @@
                               <li><a href="#container2"><img src="assets/img/ingrid.jpg" alt="instagram"></a></li>
                               <li><a href="#container3"><img src="assets/img/clark.jpg" alt="instagram"></a></li>
                               <li><a href="#container4"><img src="assets/img/flag.jpg" alt="instagram"></a></li>
-                              <li><a href="#container5"><img src="assets/img/bill.jpg" alt="instagram"></a></li>
-                              <li><a href="#"><img src="assets/img/blog/instagram/inst6.png" alt="instagram"></a></li>
+                              <li><a href="#container5"><img src="assets/img/timothee.jpg" alt="instagram"></a></li>
+                              <li><a href="#container6"><img src="assets/img/trend.jpg" alt="instagram"></a></li>
                           </ul>
                       </div>
 
@@ -345,6 +345,51 @@
                                                 }
                                               }
                                             }
+                              	        }]
+                              	    },
+
+                              	    // Configuration options go here
+                              	    options: {}
+                              	});
+                              	</script>
+                            </div>
+                        </article>
+
+                        <article class="blog_card">
+                            <div class="blog_card_top">
+                                <img src="assets/img/ben.jpg" alt="blog title " />
+                                <div class="">
+                                    <span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="blog_card_bottom">
+                                <h4>
+                                    <a href="#">
+                                        Awarded Film by Age:
+                                    </a>
+                                </h4>
+                                <div class="meta_data">
+                                    <span>Actress: relatively younder</span>
+                                </div>
+
+                                <div id="container5" style="width: 95%;">
+                                <canvas id="myChart5"></canvas>
+
+                                <script>
+                              	var ctx = document.getElementById('myChart5').getContext('2d');
+                              	var chart = new Chart(ctx, {
+                              	    // The type of chart we want to create
+                              	    type: 'bar',
+
+                              	    // The data for our dataset
+                              	    data: {
+                              	        labels: ["Youngest Best Actor", "Best Actor(average)", "youngest Best Actress", "Best Actress(average)"],
+                              	        datasets: [{
+                              	            label: "Awarded Actor/Actress by Age",
+                              							backgroundColor: 'rgb(169,169,169)',
+                              							hoverBackgroundColor: 'rgb(218,165,32)',
+                              	            data: [30, 44.5, 21, 37],
                               	        }]
                               	    },
 
