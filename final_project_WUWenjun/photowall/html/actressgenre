@@ -16,12 +16,12 @@
 
 	    // The data for our dataset
 	    data: {
-	        labels: ["Drama", "Romance", "Biography", "Comedy", "Crime", "Music", "History","Thrill","War","Family","Adventure","LGBT","Sport","Western","Noir","Action","Fantasy","Fiction"],
+	        labels: ["Drama", "Romance", "Biography", "Comedy", "Crime", "Music", "History","Thrill","War","Family","Adventure","LGBT","Sport","Western","Noir","Action","Fiction"],
 	        datasets: [{
-	            label: "Awarded Genre for Actor/Actress",
-							backgroundColor: 'rgb(169,169,169)',
+	            label: "Film Genre of Best Actor",
+	            backgroundColor: 'rgb(169,169,169)',
 							hoverBackgroundColor: 'rgb(218,165,32)',
-	            data: [118, 78, 42, 24, 21, 21, 17, 16, 13, 10, 8, 7, 5, 5, 4, 3, 1, 1],
+	            data: [66, 25, 24, 13, 12, 12, 11, 9, 8, 8, 6, 5, 4, 3, 3, 2, 1],
 	        }]
 	    },
 
