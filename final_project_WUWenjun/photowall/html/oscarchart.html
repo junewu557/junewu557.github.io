@@ -28,6 +28,10 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <!-- genre chart source  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <!-- Font Awesome source  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
 
 </head>
 <body>
@@ -119,23 +123,21 @@
                         <div class="sidebar">
                             <div class="widget widget_search">
                                 <div class="search-form">
-                                    <input type="text" class="search-field" placeholder="Search">
                                 </div>
                             </div>
                             <div class="widget widget_categories">
                                 <h4 class="widget-title">
-                                    Categories
+                                    Contents
                                 </h4>
                                 <ul>
-                                    <li><a href="#">Vestibulum maximus</a></li>
-                                    <li><a href="#">Nisi eu lobortis pharetra</a></li>
-                                    <li><a href="#">Orci quam accumsan </a></li>
-                                    <li><a href="#">Auguen pharetra massa</a></li>
+                                    <li><a href="#container">Awarded Actor/Actress by Genre</a></li>
+                                    <li><a href="#">Awarded Film by Country</a></li>
+                                    <li><a href="#">Awarded Actor/Actress by Age</a></li>
                                 </ul>
                             </div>
                             <div class="widget widget_instagram">
                                 <h4 class="widget-title">
-                                    Instagram
+                                    Awarded Film by Country
                                 </h4>
                                 <ul>
                                     <li><a href="#"><img src="assets/img/blog/instagram/inst5.png" alt="instagram"></a></li>
@@ -150,6 +152,7 @@
                                 <h4 class="widget-title">
                                     Tags
                                 </h4>
+                                <img src="assets/img/wind.jpg" alt="blog title " />
                                 <ul>
                                     <li><a href="#">branding</a></li>
                                     <li><a href="#">identity</a></li>
@@ -162,85 +165,164 @@
                             </div>
                         </div>
                     </div>
+
+
                     <div class="col-lg-8 col-md-12 col-12">
                         <article class="blog_card">
                             <div class="blog_card_top">
-                                <img src="assets/img/blog/blog1.png" alt="blog title " />
-                                <div class="blog_date">
-                                    31
+                                <img src="assets/img/love.jpg" alt="blog title " />
+                                <div class="">
                                     <span>
-                                        october 2017
                                     </span>
                                 </div>
                             </div>
                             <div class="blog_card_bottom">
                                 <h4>
                                     <a href="#">
-                                        A short blog post about design
+                                        Top 3 Film Genre of Best Actor & Actress:
                                     </a>
                                 </h4>
                                 <div class="meta_data">
-                                    <span>By Loredana Papp-Dinea</span>
-                                    <span>Design, Inspiration, Creative</span>
-                                    <span>3 Comments</span>
+                                    <span>Drama</span>
+                                    <span>Romance</span>
+                                    <span>Biography</span>
                                 </div>
+
+                                <div id="container" style="width: 100%;">
+                                <canvas id="myChart"></canvas>
+
+                                <script>
+                                var ctx = document.getElementById('myChart').getContext('2d');
+                                var chart = new Chart(ctx, {
+                                    // The type of chart we want to create
+                                    type: 'horizontalBar',
+
+                                    // The data for our dataset
+                                    data: {
+                                        labels: ["Drama", "Romance", "Biography", "Comedy", "Crime", "Music", "History","Thrill","War","Family","Adventure","LGBT","Sport","Western","Noir","Action","Fantasy","Fiction"],
+                                        datasets: [{
+                                            label: "Film Genre of Best Actor & Actress",
+                                            backgroundColor: 'rgb(169,169,169)',
+                                            hoverBackgroundColor: 'rgb(218,165,32)',
+                                            defaultFontFamily: "Georgia",
+                                            data: [118, 78, 42, 24, 21, 21, 17, 16, 13, 10, 8, 7, 5, 5, 4, 3, 1, 1],
+                                        }]
+                                    },
+
+                                    // Configuration options go here
+                                    options: {}
+                                });
+                                </script>
+
                                 <p>
-                                    Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximusLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vestibulum...
+                                  Drama; Romance; Biography
                                 </p>
                             </div>
                         </article>
+
                         <article class="blog_card">
                             <div class="blog_card_top">
-                                <img src="assets/img/blog/blog2.png" alt="blog title " />
-                                <div class="blog_date">
-                                    31
+                                <img src="assets/img/grace.jpg" alt="blog title " />
+                                <div class="">
                                     <span>
-                                        october 2017
                                     </span>
                                 </div>
                             </div>
                             <div class="blog_card_bottom">
                                 <h4>
                                     <a href="#">
-                                        A short blog post about design
+                                        Top 3 Film Genre of Best Actress:
                                     </a>
                                 </h4>
                                 <div class="meta_data">
-                                    <span>By Loredana Papp-Dinea</span>
-                                    <span>Design, Inspiration, Creative</span>
-                                    <span>3 Comments</span>
+                                    <span>Romance</span>
+                                    <span>Drama</span>
+                                    <span>Biography</span>
                                 </div>
+
+                                <div id="container2" style="width: 100%;">
+                              	<canvas id="myChart2"></canvas>
+
+                              	<script>
+                              	var ctx = document.getElementById('myChart2').getContext('2d');
+                              	var chart = new Chart(ctx, {
+                              	    // The type of chart we want to create
+                              	    type: 'horizontalBar',
+
+                              	    // The data for our dataset
+                              	    data: {
+                              	        labels: ["Romance", "Drama", "Biography", "Comedy", "Music", "Crime", "Thrill","History","War","Family","LGBT","Sport","Noir","Western","Fantasy"],
+                              	        datasets: [{
+                              	            label: "Film Genre of Best Actor",
+                              	            backgroundColor: 'rgb(169,169,169)',
+                              							hoverBackgroundColor: 'rgb(218,165,32)',
+                              	            data: [53, 52, 18, 12, 10, 9, 8, 4, 4, 4, 2, 2, 2, 1, 1],
+                              	        }]
+                              	    },
+
+                              	    // Configuration options go here
+                              	    options: {}
+                              	});
+                              	</script>
+
                                 <p>
-                                    Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximusLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vestibulum...
+                                  Drama; Romance; Biography
                                 </p>
                             </div>
                         </article>
+
                         <article class="blog_card">
                             <div class="blog_card_top">
-                                <img src="assets/img/blog/blog3.png" alt="blog title " />
-                                <div class="blog_date">
-                                    31
+                                <img src="assets/img/day.jpg" alt="blog title " />
+                                <div class="">
                                     <span>
-                                        october 2017
                                     </span>
                                 </div>
                             </div>
                             <div class="blog_card_bottom">
                                 <h4>
                                     <a href="#">
-                                        A short blog post about design
+                                        Top 3 Film Genre of Best Actor & Actress:
                                     </a>
                                 </h4>
                                 <div class="meta_data">
-                                    <span>By Loredana Papp-Dinea</span>
-                                    <span>Design, Inspiration, Creative</span>
-                                    <span>3 Comments</span>
+                                    <span>Drama</span>
+                                    <span>Romance</span>
+                                    <span>Biography</span>
                                 </div>
+
+                                <div id="container3" style="width: 100%;">
+                                <canvas id="myChart3"></canvas>
+
+                                <script>
+                              	var ctx = document.getElementById('myChart3').getContext('2d');
+                              	var chart = new Chart(ctx, {
+                              	    // The type of chart we want to create
+                              	    type: 'horizontalBar',
+
+                              	    // The data for our dataset
+                              	    data: {
+                              	        labels: ["Drama", "Romance", "Biography", "History", "Comedy", "Crime", "Music","War","Thrill","Adventure","Family","LGBT","Western","Sport","Action","Noir","Fiction"],
+                              	        datasets: [{
+                              	            label: "Film Genre of Best Actor",
+                              	            backgroundColor: 'rgb(169,169,169)',
+                              							hoverBackgroundColor: 'rgb(218,165,32)',
+                              	            data: [66, 25, 24, 13, 12, 12, 11, 9, 8, 8, 6, 5, 4, 3, 3, 2, 1],
+                              	        }]
+                              	    },
+
+                              	    // Configuration options go here
+                              	    options: {}
+                              	});
+                                </script>
+
                                 <p>
-                                    Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximusLorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla. Nulla sit amet luctus dolor. Etiam finibus consequat ante ac congue. Quisque porttitor porttitor tempus. Donec maximus ipsum non ornare vestibulum...
+                                  Drama; Romance; Biography
                                 </p>
                             </div>
                         </article>
+
+
                     </div>
                 </div>
             </div>
