@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <style>
+  body {
+    background: url(2.jpg) no-repeat center fixed;
+    background-size:cover;}
+  </style>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+
+
+  <title>Film Festivals</title>
+           <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+           <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+           <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+           <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/r/bs-3.3.5/jq-2.1.4,dt-1.10.8/datatables.min.css"/>
+           <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.11/d3.js"></script>
+           <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.js"></script>
+           <link href="//cdnjs.cloudflare.com/ajax/libs/c3/0.1.29/c3.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+
+  <br /><br />
+          <div class="container">
+            <style>
+                p {
+                font-family: Cursive;
+                color: #D9B300;
+                font-size: 35px;
+                text-shadow:color: grey; text-shadow: #6C6C6C 0.05em 0.05em 0.1em;
+                font-weight: bolder;
+                text-align: center;
+                letter-spacing: 4px;
+                padding-top:50px;
+                }
+
+                p {
+              width: 100%;
+              height: 110px;
+              background-color: black;
+            }
+
+              text {
+                font-family: Cursive;
+                color: deepgrey;
+                font-size: 20px;
+                font-weight: lighter;
+                letter-spacing: 2px;
+                padding-top:65px;
+                padding-left: 460px;
+              }
+            </style>
+
+               <p>Film Festivals datatable</p><br />
+               <text> Accuracy from 2007-2017</text><br />
+               <table id="data-table2" class="table table-black table-bordered table-hover">
+                    <thead>
+                         <tr>
+
+                           <th>Name</th>
+                              <th>year</th>
+                              <th>best_picture</th>
+                              <th>best_actor</th>
+                              <th>best_actress</th>
+                              <th>best_foreign_language_film</th>
+                            </tr>
+                          </thead>
+                        </table>
+                <div id="chart"></div>
+           </div>
+ </body>
+</html>
+
+<script>
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/film_festivals?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_picture);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       items.push(value.fields.best_foreign_language_film);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table2').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_picture",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                     { title: "best_foreign_language_film",
+                             defaultContent:""},
+
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+</script>

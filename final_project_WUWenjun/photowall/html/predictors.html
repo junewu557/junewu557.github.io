@@ -28,10 +28,6 @@
     <link href="assets/css/main.css" rel="stylesheet">
     <!-- js.chart for yearchart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-    <!-- for datatable -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
 
 
 
@@ -227,7 +223,6 @@
                                         </div>
                                         <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
                                             <div class="card-body">
-                                                Past 10 Years data
                                                 <table id="data-table" class="table table-black table-bordered table-hover">
                                                      <thead>
                                                           <tr>
@@ -247,46 +242,26 @@
                                         <div class="card-header" role="tab" id="golden">
                                             <h5>
                                                 <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-                                                    Collapsible Group Item #3
+                                                    Golden Globe Awards (2008-2017)
                                                 </a>
                                             </h5>
                                         </div>
                                         <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
                                             <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                                <table id="data-table2" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div class="card accordion_card">
-                                        <div class="card-header" role="tab" id="bafta">
-                                            <h5>
-                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-                                                    Collapsible Group Item #3
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div class="card accordion_card">
-                                        <div class="card-header" role="tab" id="critic">
-                                            <h5>
-                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
-                                                    Collapsible Group Item #3
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
 
 
 
@@ -551,6 +526,11 @@
 <script src="assets/js/bootstrap-progressbar.min.js"></script>
 <!-- Custom js -->
 <script src="assets/js/main.js"></script>
+<!-- for datatable -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
 </body>
 </html>
 
@@ -586,4 +566,36 @@ $(document).ready(function(){
         }); // end .getJSON
      }); // end button
 });
+
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/golden?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table2').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
 </script>
