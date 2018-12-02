@@ -29,6 +29,7 @@
     <!-- js.chart for yearchart -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
     <!-- for datatable -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
 
@@ -557,7 +558,7 @@
 $(document).ready(function(){
   var items = [];
         var i = 0;
-        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/film_festivals?api_key=key4aplWFBl8A764P";
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/SAG?api_key=key4aplWFBl8A764P";
         var dataSet = [];
         $.getJSON(airtable_read_endpoint, function(result) {
                $.each(result.records, function(key,value) {
