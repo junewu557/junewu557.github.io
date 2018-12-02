@@ -26,6 +26,9 @@
     <link rel="stylesheet" href="assets/css/animate.min.css">
     <!-- Custom styles for this template -->
     <link href="assets/css/main.css" rel="stylesheet">
+    <!-- js.chart for yearchart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
 </head>
 <body>
 <div class="loader">
@@ -142,18 +145,19 @@
                         <h4>Check by:</h4>
                     </div>
                     <div class="section_content mt30">
-                        <a href="#overall1" class="btn btn-dark">Overall Accuracy</a>
+                        <a href="#overall" class="btn btn-dark">Overall Accuracy</a>
                         <a href="#actor" class="btn btn-dark">Best Actor</a>
                         <a href="#actress" class="btn btn-dark">Best Actress</a>
-                        <a href="#" class="btn btn-dark">Year</a>
+                        <a href="#year" class="btn btn-dark">Year</a>
                     </div><br>
                 </div>
                 <!--button elements end-->
 
                 <!--overall accuracy bars elements-->
+                <div id="overall">
                 <div class="element_section mt30 mb50">
                     <div class="section_title">
-                        <h4 id="overall1">Overall Accuracy</h4>
+                        <h4>Overall Accuracy</h4>
                     </div>
                     <div class="section_content mt30">
                         <div class="row justify-content-center">
@@ -189,6 +193,7 @@
                                             <span class="progress_num" style="left:75%;">75%</span>
                                         </div>
                                     </div>
+
                                     <div class="single_progressbar">
                                         <div class="progress">
                                             <div class="progress-bar" role="progressbar" data-transitiongoal="70"></div>
@@ -206,27 +211,12 @@
 
                                 <div id="accordion" role="tablist">
 
-                                    <div class="card accordion_card">
-                                        <div class="card-header" role="tab" id="headingOne">
-                                            <h5>
-                                                <a data-toggle="collapse" href="#collapseOne" role="button" aria-expanded="true" aria-controls="collapseOne">
-                                                    Collapsible Group Item #1
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordion">
-                                            <div class="card-body">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-
 
                                     <div class="card accordion_card">
-                                        <div class="card-header" role="tab" id="headingTwo">
+                                        <div class="card-header" role="tab" id="SAG">
                                             <h5>
                                                 <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Collapsible Group Item #2
+                                                    Screen Actors Guild Awards (2008-2017)
                                                 </a>
                                             </h5>
                                         </div>
@@ -239,7 +229,37 @@
 
 
                                     <div class="card accordion_card">
-                                        <div class="card-header" role="tab" id="headingThree">
+                                        <div class="card-header" role="tab" id="golden">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                                                    Collapsible Group Item #3
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="bafta">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                                                    Collapsible Group Item #3
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                            <div class="card-body">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="critic">
                                             <h5>
                                                 <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
                                                     Collapsible Group Item #3
@@ -254,6 +274,7 @@
                                     </div>
 
 
+
                                 </div>
 
 
@@ -265,6 +286,7 @@
 
 
                 <!--counter elements-->
+                <div id="statistics">
                 <div class="element_section mt30 mb50">
                     <div class="section_title">
                         <h4>Overall Accuracy (Past 10 Years)</h4>
@@ -302,11 +324,11 @@
 
 
                 <!--Accuracy by Actor-->
+                <div id="actor">
                 <div class="element_section mt30 mb50">
                     <div class="section_title">
                       <img src="assets/img/cover2.jpg" alt="blog title " />
                       <br></br>
-                      <div id="actor">
                         <h4>Accuracy by Actor</h4>
                     </div>
                     <div class="section_content mt30">
@@ -357,10 +379,10 @@
                 <!--Accuracy by Actor end-->
 
                 <!--Accuracy by Actress-->
+                <div id="actress">
                 <div class="element_section mt30 mb50">
                     <div class="section_title">
                       <br></br>
-                      <div id="actress">
                         <h4>Accuracy by Actress</h4>
                     </div>
                     <div class="section_content mt30">
@@ -409,6 +431,78 @@
                               </div>
                             </div>
                           </div>
+                <!--end of Accuracy by Actress-->
+
+                <!--Accuracy by Year-->
+                <div id="year">
+                <div class="element_section mt30 mb50">
+                    <div class="section_title">
+                      <img src="assets/img/cover3.jpg" alt="blog title " />
+                      <br></br>
+                        <h4>Accuracy by Year</h4>
+                    </div>
+                    <br>
+                    <div class="section_content mt30">
+                        <div class="row justify-content-center">
+                              <div id="container" style="width: 85%;">
+                              <canvas id="barChart"></canvas>
+
+                              <script>
+                              var canvas = document.getElementById("barChart");
+                              var ctx = canvas.getContext('2d');
+
+                              var data = {
+                                labels: ["2008", "2009", "2010", "2011", "2012", "2013", "2014","2015","2016","2017"],
+                                datasets: [{
+                                    label: "Average Accuracy of Best Actor",
+                                    fill: false,
+                                    backgroundColor: "rgb(210,180,140)",
+                                    borderColor: "rgb(210,180,140)",
+                                    pointRadius:5,
+                                    pointHoverBackgroundColor: "rgb(210,180,140)",
+                                    pointHoverRadius: 10,
+                                    data: [50, 75, 100, 50, 100, 75, 75, 100, 100, 75],
+                                  },
+                                  {
+                                    label: "Average Accuracy of Best Actress",
+                                    fill: false,
+                                    backgroundColor: "rgb(245,222,179)",
+                                    borderColor: "rgb(245,222,179)",
+                                    pointRadius:5,
+                                    pointHoverBackgroundColor: "rgb(245,222,179)",
+                                    pointHoverRadius: 10,
+                                    data: [25, 50, 100, 75, 25, 100, 100, 100, 75, 100],
+                                  }
+
+                                ]
+                              };
+
+                              var options = {
+                                scales: {
+                                          yAxes: [{
+                                              ticks: {
+                                                  beginAtZero:true
+                                              },
+                                              scaleLabel: {
+                                                   display: true,
+                                                   fontSize: 20
+                                                }
+                                          }]
+                                      }
+                              };
+
+                              // Chart declaration:
+                              var myBarChart = new Chart(ctx, {
+                                type: 'line',
+                                data: data,
+                                options: options
+                              });
+
+                              </script>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
 
 
 

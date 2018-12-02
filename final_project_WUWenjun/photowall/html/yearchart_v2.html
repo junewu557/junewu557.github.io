@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+</head>
+
+<body>
+	<div id="container" style="width: 75%;">
+	<canvas id="myChart"></canvas>
+
+	<script>
+	var ctx = document.getElementById('myChart').getContext('2d');
+	var chart = new Chart(ctx, {
+
+			var lineChart = new Chart(myChart, {
+			  type: 'line',
+				data: data,
+  		options: options
+			});
+
+	    // The data for our dataset
+			var data1 = {
+			    label: "Average Accuracy of Best Actor",
+			    data: [50, 75, 100, 50, 100, 75, 75, 100, 100, 75],
+			    lineTension: 0.3,
+			    fill: false,
+			    borderColor: "rgb(0,0,0)",
+			    backgroundColor: 'transparent',
+			    pointBackgroundColor: 'grey',
+			    pointHoverRadius: 15,
+			    pointHitRadius: 30,
+			    pointBorderWidth: 2,
+			    pointStyle: 'rect'
+			  };
+
+				var data2 = {
+				    label: "Average Accuracy of Best Actress",
+				    data: [25, 50, 100, 75, 25, 100, 100, 100, 75, 100],
+						lineTension: 0.3,
+				    fill: false,
+				    borderColor: "rgb(0,0,0)",
+				    backgroundColor: 'transparent',
+				    pointBackgroundColor: 'grey',
+				    pointHoverRadius: 15,
+				    pointHitRadius: 30,
+				    pointBorderWidth: 2,
+				    pointStyle: 'rect'
+				  };
+
+					var data = {
+					  labels: ["2008", "2009", "2010", "2011", "2012", "2013", "2014","2015","2016","2017"],
+					  datasets: [data1, data2]
+					};
+	    // Configuration options go here
+	    options: {}
+	});
+
+	</script>
+</body>
+
+</html>
