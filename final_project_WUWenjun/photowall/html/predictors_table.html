@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ========== Meta Tags ========== -->
+    <meta charset="UTF-8">
+    <meta name="description" content="Cocoon -Portfolio">
+    <meta name="keywords" content="Cocoon , Portfolio">
+    <meta name="author" content="Pharaohlab">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- ========== Title ========== -->
+    <title> Cocoon -Portfolio</title>
+    <!-- ========== Favicon Ico ========== -->
+    <!--<link rel="icon" href="fav.ico">-->
+    <!-- ========== STYLESHEETS ========== -->
+    <!-- Bootstrap CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Fonts Icon CSS -->
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet">
+    <link href="assets/css/et-line.css" rel="stylesheet">
+    <link href="assets/css/ionicons.min.css" rel="stylesheet">
+    <!-- Carousel CSS -->
+    <link href="assets/css/slick.css" rel="stylesheet">
+    <!-- Magnific-popup -->
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <!-- Animate CSS -->
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <!-- Custom styles for this template -->
+    <link href="assets/css/main.css" rel="stylesheet">
+    <!-- js.chart for yearchart -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+
+
+
+</head>
+<body>
+<div class="loader">
+    <div class="loader-outter"></div>
+    <div class="loader-inner"></div>
+</div>
+
+<div class="body-container container-fluid">
+    <a class="menu-btn" href="javascript:void(0)">
+        <i class="ion ion-grid"></i>
+    </a>
+    <div class="row justify-content-center">
+        <!--=================== side menu ====================-->
+        <div class="col-lg-2 col-md-3 col-12 menu_block">
+          <!--main menu -->
+          <div class="side_menu_section">
+              <ul class="menu_nav">
+                  <li>
+                      <a href="index.html">
+                          Home
+                      </a>
+                  </li>
+                  <li>
+                      <a href="oscarchart_v2.html">
+                          Oscar Awards Data
+                      </a>
+                  </li>
+                    <li class="active">
+                      <a href="predictors.html">
+                          Oscar Predictors
+                      </a>
+                  </li>
+                  <li>
+                      <a href="photowall.html">
+                          Top 12 Photo Wall
+                      </a>
+                  </li>
+                  <li>
+                      <a href="contact.html">
+                          Contact
+                      </a>
+                  </li>
+              </ul>
+          </div>
+          <!--main menu end -->
+
+
+            <!--main menu -->
+            <div class="side_menu_bottom">
+                <div class="side_menu_bottom_inner">
+                    <ul class="social_menu">
+                        <li>
+                            <a href="#"> <i class="ion ion-social-pinterest"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="ion ion-social-facebook"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="ion ion-social-twitter"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="ion ion-social-dribbble"></i> </a>
+                        </li>
+                    </ul>
+                    <div class="copy_right">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+            <!--filter menu end -->
+
+
+            <!--social and copyright -->
+            <div class="side_menu_bottom">
+                <div class="side_menu_bottom_inner">
+                    <ul class="social_menu">
+                        <li>
+                            <a href="#"> <i class="ion ion-social-pinterest"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="ion ion-social-facebook"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="ion ion-social-twitter"></i> </a>
+                        </li>
+                        <li>
+                            <a href="#"> <i class="ion ion-social-dribbble"></i> </a>
+                        </li>
+                    </ul>
+                    <div class="copy_right">
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                        <p class="copyright">Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a></p>
+                        <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    </div>
+                </div>
+            </div>
+            <!--social and copyright end -->
+
+        </div>
+        <!--=================== side menu end====================-->
+
+        <!--=================== content body ====================-->
+        <div class="col-lg-10 col-md-9 col-12 body_block  align-content-center">
+
+            <div class="elements">
+                <h3>Oscar Predictors Accuracy</h3>
+
+
+                <!--overall accuracy bars elements-->
+                <div id="overall">
+                  <img src="assets/img/cover.jpg" alt="blog title " />
+                <div class="element_section mt30 mb50">
+                    <div class="section_title">
+                        <h4>Overall Accuracy: detailed tables</h4>
+                    </div>
+                    <div class="section_content mt30">
+                        <div class="row justify-content-center">
+                            <div class="col-12 col-md-6">
+                                <div class="progress_container">
+
+                                <div id="accordion" role="tablist">
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="SAG">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Screen Actors Guild Awards (2008-2017)
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <table id="data-table" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="golden">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                                                    Golden Globe Awards (2008-2017)
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <table id="data-table2" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="golden">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseFour" role="button" aria-expanded="false" aria-controls="collapseFour">
+                                                    British Academy Of Film And Television Arts (2008-2017)
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <table id="data-table3" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="golden">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseFive" role="button" aria-expanded="false" aria-controls="collapseFive">
+                                                    The Critics' Choice Movie Awards (2008-2017)
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseFive" class="collapse" role="tabpanel" aria-labelledby="headingFive" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <table id="data-table4" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--button elements-->
+                <div class="element_section mt30 mb50">
+                    <div class="section_title">
+                        <h4>Back to Predictors</h4>
+                    </div>
+                    <div class="element_section mt30 mb50">
+                        <a href="predictors.html" class="btn btn-primary-dark">Check Out More Data</a>
+                    </div><br>
+                </div>
+                <!--button elements end-->
+
+
+
+
+
+
+            </div>
+
+        </div>
+        <!--=================== content body end ====================-->
+    </div>
+</div>
+
+
+<!-- jquery -->
+<script src="assets/js/jquery.min.js"></script>
+<!-- bootstrap -->
+<script src="assets/js/popper.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/js/waypoints.min.js"></script>
+<!--slick carousel -->
+<script src="assets/js/slick.min.js"></script>
+<!-- Progress bars JS -->
+<script src="assets/js/bootstrap-progressbar.min.js"></script>
+<!--Counter-->
+<script src="assets/js/jquery.counterup.min.js"></script>
+<!-- Magnific-popup -->
+<script src="assets/js/jquery.magnific-popup.min.js"></script>
+<!-- WOW JS -->
+<script src="assets/js/wow.min.js"></script>
+<!-- Custom js -->
+<script src="assets/js/main.js"></script>
+<!-- datatable JS -->
+<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
+
+
+
+</body>
+</html>
+
+<script>
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/SAG?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/golden?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table2').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/bafta?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table3').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/critic?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table4').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
+</script>

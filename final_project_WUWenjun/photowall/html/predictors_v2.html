@@ -206,15 +206,68 @@
                                         </div>
                                     </div>
 
-                                    <div class="element_section mt30 mb50">
-                                        <a href="predictors_table.html" class="btn btn-primary-outline">Check Out Details</a>
-                                    </div>
 
                                 </div>
                             </div>
-                          </div>
-                      </div>
-                    </div>
+
+                            <div class="col-12 col-md-6">
+                                <div id="accordion" role="tablist">
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="SAG">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseTwo" role="button" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Screen Actors Guild Awards (2008-2017)
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <table id="data-table" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="card accordion_card">
+                                        <div class="card-header" role="tab" id="golden">
+                                            <h5>
+                                                <a class="collapsed" data-toggle="collapse" href="#collapseThree" role="button" aria-expanded="false" aria-controls="collapseThree">
+                                                    Golden Globe Awards (2008-2017)
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordion">
+                                            <div class="card-body">
+                                                <table id="data-table2" class="table table-black table-bordered table-hover">
+                                                     <thead>
+                                                          <tr>
+                                                            <th>Name</th>
+                                                               <th>year</th>
+                                                               <th>best_actor</th>
+                                                               <th>best_actress</th>
+                                                             </tr>
+                                                           </thead>
+                                                         </table>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!--progress bars  elements end-->
@@ -231,13 +284,13 @@
                             <div class="col-12 col-sm-6 col-md-3">
                                 <div class="counter_box">
                                     <span class="counter">4</span>
-                                    <h5>Actors awarded by all 4 Predictors</h5>
+                                    <h5>Best Actors awarded <br>by all 4 Predictors</h5>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
                                 <div class="counter_box">
                                     <span class="counter">5</span>
-                                    <h5>Actress awarded by all 4 Predictors</h5>
+                                    <h5>Best Actress awarded <br>by all 4 Predictors</h5>
                                 </div>
                             </div>
                             <div class="col-12 col-sm-6 col-md-3">
@@ -458,9 +511,8 @@
 <script src="assets/js/waypoints.min.js"></script>
 <!--slick carousel -->
 <script src="assets/js/slick.min.js"></script>
-<!--Portfolio Filter-->
-<script src="assets/js/imgloaded.js"></script>
-<script src="assets/js/isotope.js"></script>
+<!-- Progress bars JS -->
+<script src="assets/js/bootstrap-progressbar.min.js"></script>
 <!--Counter-->
 <script src="assets/js/jquery.counterup.min.js"></script>
 <!-- Magnific-popup -->
@@ -469,10 +521,77 @@
 <script src="assets/js/wow.min.js"></script>
 <!-- Custom js -->
 <script src="assets/js/main.js"></script>
-<!-- Progress bars JS -->
-<script src="assets/js/bootstrap-progressbar.min.js"></script>
+<!-- datatable JS -->
+<script type="text/javascript" src="https://cdn.datatables.net/r/bs-3.3.5/jqc-1.11.3,dt-1.10.8/datatables.min.js"></script>
+
 
 
 
 </body>
 </html>
+
+<script>
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/SAG?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
+$(document).ready(function(){
+  var items = [];
+        var i = 0;
+        var airtable_read_endpoint = "https://api.airtable.com/v0/appXRg7lMCPYSPTaq/golden?api_key=key4aplWFBl8A764P";
+        var dataSet = [];
+        $.getJSON(airtable_read_endpoint, function(result) {
+               $.each(result.records, function(key,value) {
+                   items = [];
+                       items.push(value.fields.Name);
+                      items.push(value.fields.year);
+                       items.push(value.fields.best_actor);
+                       items.push(value.fields.best_actress);
+                       dataSet.push(items);
+                }); // end .each
+                $('#data-table2').DataTable( {
+                 data: dataSet,
+                 retrieve: true,
+                 columns: [
+                     { title: "Name",
+                       defaultContent:""},
+                     { title: "year",
+                       defaultContent:""},
+                     { title: "best_actor",
+                         defaultContent:""},
+                     { title: "best_actress",
+                           defaultContent:""},
+                 ]
+        }); // end .getJSON
+     }); // end button
+});
+
+</script>
