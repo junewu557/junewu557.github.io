@@ -388,35 +388,45 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     </a>
                                 </h4>
                                 <div class="meta_data">
-                                    <span>Actress: relatively younder</span>
+                                    <span>Actress: relatively younger</span>
                                 </div>
 
                                 <div id="container5" style="width: 95%;">
-                                <canvas id="myChart5"></canvas>
+                                                               <canvas id="myChart5"></canvas>
 
-                                <script>
-                              	var ctx = document.getElementById('myChart5').getContext('2d');
-                              	var chart = new Chart(ctx, {
-                              	    // The type of chart we want to create
-                              	    type: 'bar',
+                                                               <script>
+                                                             	var ctx = document.getElementById('myChart5').getContext('2d');
+                                                             	var chart = new Chart(ctx, {
+                                                             	    // The type of chart we want to create
+                                                             	    type: 'bar',
+                                                             	    // The data for our dataset
+                                                             	    data: {
+                                                             	        labels: ["Youngest Best Actor", "Best Actor(average)", "youngest Best Actress", "Best Actress(average)"],
+                                                             	        datasets: [{
+                                                             	            label: "Awarded Actor/Actress by Age",
+                                                             							backgroundColor: 'rgb(169,169,169)',
+                                                             							hoverBackgroundColor: 'rgb(218,165,32)',
+                                                             	            data: [30, 44.5, 21, 37],
+                                                             	        }]
+                                                             	    },
 
-                              	    // The data for our dataset
-                              	    data: {
-                              	        labels: ["Youngest Best Actor", "Best Actor(average)", "youngest Best Actress", "Best Actress(average)"],
-                              	        datasets: [{
-                              	            label: "Awarded Actor/Actress by Age",
-                              							backgroundColor: 'rgb(169,169,169)',
-                              							hoverBackgroundColor: 'rgb(218,165,32)',
-                              	            data: [30, 44.5, 21, 37],
-                              	        }]
-                              	    },
+                                                                  options: {
+                                                                       title: {
+                                                                           display: false
+                                                                       },
+                                                                       scales: {
+                                                                                 yAxes: [{
+                                                                                   ticks: {
+                                                                                       beginAtZero: true
+                                                                                   }
+                                                                                 }]
+                                                                       }
+                                                                     }
+                                                                   });
 
-                              	    // Configuration options go here
-                              	    options: {}
-                              	});
-                              	</script>
-                            </div>
-                        </article>
+                                                             	</script>
+                                                           </div>
+                                                       </article>
 
                         <!--bottom elements-->
                         <div class="element_section mt30 mb50">
