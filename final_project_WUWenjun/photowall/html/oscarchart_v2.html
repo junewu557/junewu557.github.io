@@ -181,10 +181,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <span>Biography</span>
                                 </div>
 
-                                <div id="container" style="width: 100%;">
+                                <div id="container" style="position: relative; width: 100%;">
                                 <canvas id="myChart"></canvas>
 
                                 <script>
+                                Chart.defaults.global.defaultFontSize	= 10;
+                                Chart.defaults.global.barThickness	= 'flex';
+
                                 var ctx = document.getElementById('myChart').getContext('2d');
                                 var chart = new Chart(ctx, {
                                     // The type of chart we want to create
